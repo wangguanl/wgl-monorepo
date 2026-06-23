@@ -13,5 +13,5 @@ const text = getSelectedText();
 ## Code
 
 ```js
-<!-- @include: ../../src/getSelectedText.js -->
+<!-- @include: ../../src/getSelectedText.ts -->
 ```

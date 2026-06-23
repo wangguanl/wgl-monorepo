@@ -73,7 +73,7 @@ Wgl.validation();
 
 ```js  [源码]
 // src/validation.js
-<!-- @include: ../../src/validation.js -->
+<!-- @include: ../../src/validation.ts -->
 ```
 
 ```js  [ESModule]

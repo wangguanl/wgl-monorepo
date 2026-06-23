@@ -15,5 +15,5 @@ if (supportsTouchEvents()) {
 ## Code
 
 ```js
-<!-- @include: ../../src/supportsTouchEvents.js -->
+<!-- @include: ../../src/supportsTouchEvents.ts -->
 ```

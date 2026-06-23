@@ -13,5 +13,5 @@ elementContains(parentEl, childEl); // true | false
 ## Code
 
 ```js
-<!-- @include: ../../src/elementContains.js -->
+<!-- @include: ../../src/elementContains.ts -->
 ```

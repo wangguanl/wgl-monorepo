@@ -2,12 +2,23 @@
   "name": "@wgl-m/node-utils",
   "version": "2.0.0",
   "description": "Node-only utility functions",
-  "main": "./index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./index.js"
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
   },
   "files": [
-    "index.js"
+    "dist"
   ],
   "engines": {
     "node": ">=16"
@@ -27,15 +38,15 @@
     "access": "public"
   },
   "scripts": {
-    "build": "echo \"@wgl-m/node-utils: no build step\"",
-    "build:turbo": "echo \"@wgl-m/node-utils: no build step\""
-  },
-  "turbo": {
-    "build": {
-      "outputs": []
-    }
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "await-to-js": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
   }
 }

@@ -14,5 +14,5 @@ console.log(lang);
 ## Code
 
 ```js
-<!-- @include: ../../src/detectLanguage.js -->
+<!-- @include: ../../src/detectLanguage.ts -->
 ```

@@ -15,5 +15,5 @@ copyToClipboard('hello world').then(() => {
 ## Code
 
 ```js
-<!-- @include: ../../src/copyToClipboard.js -->
+<!-- @include: ../../src/copyToClipboard.ts -->
 ```

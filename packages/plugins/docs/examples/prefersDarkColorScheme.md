@@ -15,5 +15,5 @@ if (prefersDarkColorScheme()) {
 ## Code
 
 ```js
-<!-- @include: ../../src/prefersDarkColorScheme.js -->
+<!-- @include: ../../src/prefersDarkColorScheme.ts -->
 ```

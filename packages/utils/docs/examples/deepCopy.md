@@ -47,7 +47,7 @@ Wgl.deepCopy();
 
 ```js  [源码]
 // src/deepCopy.js
-<!-- @include: ../../src/deepCopy.js -->
+<!-- @include: ../../src/deepCopy.ts -->
 ```
 
 ```js  [ESModule]

@@ -15,5 +15,5 @@ clickOutside(dropdownEl, () => {
 ## Code
 
 ```js
-<!-- @include: ../../src/clickOutside.js -->
+<!-- @include: ../../src/clickOutside.ts -->
 ```

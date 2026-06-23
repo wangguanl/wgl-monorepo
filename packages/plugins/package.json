@@ -6,62 +6,147 @@
   "sideEffects": false,
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./checkCapsLock": {
-      "import": "./dist/checkCapsLock.js",
-      "require": "./dist/checkCapsLock.cjs"
+      "import": {
+        "types": "./dist/checkCapsLock.d.ts",
+        "default": "./dist/checkCapsLock.js"
+      },
+      "require": {
+        "types": "./dist/checkCapsLock.d.cts",
+        "default": "./dist/checkCapsLock.cjs"
+      }
     },
     "./clickOutside": {
-      "import": "./dist/clickOutside.js",
-      "require": "./dist/clickOutside.cjs"
+      "import": {
+        "types": "./dist/clickOutside.d.ts",
+        "default": "./dist/clickOutside.js"
+      },
+      "require": {
+        "types": "./dist/clickOutside.d.cts",
+        "default": "./dist/clickOutside.cjs"
+      }
     },
     "./copyToClipboard": {
-      "import": "./dist/copyToClipboard.js",
-      "require": "./dist/copyToClipboard.cjs"
+      "import": {
+        "types": "./dist/copyToClipboard.d.ts",
+        "default": "./dist/copyToClipboard.js"
+      },
+      "require": {
+        "types": "./dist/copyToClipboard.d.cts",
+        "default": "./dist/copyToClipboard.cjs"
+      }
     },
     "./detectLanguage": {
-      "import": "./dist/detectLanguage.js",
-      "require": "./dist/detectLanguage.cjs"
+      "import": {
+        "types": "./dist/detectLanguage.d.ts",
+        "default": "./dist/detectLanguage.js"
+      },
+      "require": {
+        "types": "./dist/detectLanguage.d.cts",
+        "default": "./dist/detectLanguage.cjs"
+      }
     },
     "./elementContains": {
-      "import": "./dist/elementContains.js",
-      "require": "./dist/elementContains.cjs"
+      "import": {
+        "types": "./dist/elementContains.d.ts",
+        "default": "./dist/elementContains.js"
+      },
+      "require": {
+        "types": "./dist/elementContains.d.cts",
+        "default": "./dist/elementContains.cjs"
+      }
     },
     "./getAncestors": {
-      "import": "./dist/getAncestors.js",
-      "require": "./dist/getAncestors.cjs"
+      "import": {
+        "types": "./dist/getAncestors.d.ts",
+        "default": "./dist/getAncestors.js"
+      },
+      "require": {
+        "types": "./dist/getAncestors.d.cts",
+        "default": "./dist/getAncestors.cjs"
+      }
     },
     "./getSelectedText": {
-      "import": "./dist/getSelectedText.js",
-      "require": "./dist/getSelectedText.cjs"
+      "import": {
+        "types": "./dist/getSelectedText.d.ts",
+        "default": "./dist/getSelectedText.js"
+      },
+      "require": {
+        "types": "./dist/getSelectedText.d.cts",
+        "default": "./dist/getSelectedText.cjs"
+      }
     },
     "./prefersDarkColorScheme": {
-      "import": "./dist/prefersDarkColorScheme.js",
-      "require": "./dist/prefersDarkColorScheme.cjs"
+      "import": {
+        "types": "./dist/prefersDarkColorScheme.d.ts",
+        "default": "./dist/prefersDarkColorScheme.js"
+      },
+      "require": {
+        "types": "./dist/prefersDarkColorScheme.d.cts",
+        "default": "./dist/prefersDarkColorScheme.cjs"
+      }
     },
     "./scale": {
-      "import": "./dist/scale.js",
-      "require": "./dist/scale.cjs"
+      "import": {
+        "types": "./dist/scale.d.ts",
+        "default": "./dist/scale.js"
+      },
+      "require": {
+        "types": "./dist/scale.d.cts",
+        "default": "./dist/scale.cjs"
+      }
     },
     "./smoothScroll": {
-      "import": "./dist/smoothScroll.js",
-      "require": "./dist/smoothScroll.cjs"
+      "import": {
+        "types": "./dist/smoothScroll.d.ts",
+        "default": "./dist/smoothScroll.js"
+      },
+      "require": {
+        "types": "./dist/smoothScroll.d.cts",
+        "default": "./dist/smoothScroll.cjs"
+      }
     },
     "./supportsTouchEvents": {
-      "import": "./dist/supportsTouchEvents.js",
-      "require": "./dist/supportsTouchEvents.cjs"
+      "import": {
+        "types": "./dist/supportsTouchEvents.d.ts",
+        "default": "./dist/supportsTouchEvents.js"
+      },
+      "require": {
+        "types": "./dist/supportsTouchEvents.d.cts",
+        "default": "./dist/supportsTouchEvents.cjs"
+      }
     },
     "./toggleFullscreen": {
-      "import": "./dist/toggleFullscreen.js",
-      "require": "./dist/toggleFullscreen.cjs"
+      "import": {
+        "types": "./dist/toggleFullscreen.d.ts",
+        "default": "./dist/toggleFullscreen.js"
+      },
+      "require": {
+        "types": "./dist/toggleFullscreen.d.cts",
+        "default": "./dist/toggleFullscreen.cjs"
+      }
     },
     "./upload": {
-      "import": "./dist/upload.js",
-      "require": "./dist/upload.cjs"
+      "import": {
+        "types": "./dist/upload.d.ts",
+        "default": "./dist/upload.js"
+      },
+      "require": {
+        "types": "./dist/upload.d.cts",
+        "default": "./dist/upload.cjs"
+      }
     }
   },
   "files": [
@@ -85,6 +170,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
     "docs": "vitepress dev docs",
     "docs:build": "vitepress build docs"
   },

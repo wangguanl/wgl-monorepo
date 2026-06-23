@@ -14,5 +14,5 @@ toggleFullscreen(false);         // 退出全屏
 ## Code
 
 ```js
-<!-- @include: ../../src/toggleFullscreen.js -->
+<!-- @include: ../../src/toggleFullscreen.ts -->
 ```

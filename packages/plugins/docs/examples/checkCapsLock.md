@@ -15,5 +15,5 @@ checkCapsLock(inputEl, isOn => {
 ## Code
 
 ```js
-<!-- @include: ../../src/checkCapsLock.js -->
+<!-- @include: ../../src/checkCapsLock.ts -->
 ```

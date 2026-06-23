@@ -13,5 +13,5 @@ smoothScroll('#section-2');
 ## Code
 
 ```js
-<!-- @include: ../../src/smoothScroll.js -->
+<!-- @include: ../../src/smoothScroll.ts -->
 ```

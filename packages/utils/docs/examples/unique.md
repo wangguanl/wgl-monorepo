@@ -42,7 +42,7 @@ Wgl.unique();
 
 ```js  [源码]
 // src/unique.js
-<!-- @include: ../../src/unique.js -->
+<!-- @include: ../../src/unique.ts -->
 ```
 
 ```js  [ESModule]

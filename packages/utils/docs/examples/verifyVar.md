@@ -54,7 +54,7 @@ Wgl.verifyVar();
 
 ```js  [源码]
 // src/verifyVar.js
-<!-- @include: ../../src/verifyVar.js -->
+<!-- @include: ../../src/verifyVar.ts -->
 ```
 
 ```js  [ESModule]

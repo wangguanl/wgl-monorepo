@@ -13,5 +13,5 @@ scale(750); // 设计稿宽度 750
 ## Code
 
 ```js
-<!-- @include: ../../src/scale.js -->
+<!-- @include: ../../src/scale.ts -->
 ```

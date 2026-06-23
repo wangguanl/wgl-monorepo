@@ -79,6 +79,9 @@ pnpm install
 # 本地构建（发版前自测）
 pnpm build
 
+# 类型检查
+pnpm typecheck
+
 # 创建 changeset（发版第 1 步）
 pnpm changeset
 

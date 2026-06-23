@@ -13,5 +13,5 @@ const ancestors = getAncestors(document.querySelector('.item'));
 ## Code
 
 ```js
-<!-- @include: ../../src/getAncestors.js -->
+<!-- @include: ../../src/getAncestors.ts -->
 ```

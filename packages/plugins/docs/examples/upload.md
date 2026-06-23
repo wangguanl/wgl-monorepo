@@ -24,5 +24,5 @@ pnpm add axios
 ## Code
 
 ```js
-<!-- @include: ../../src/upload.js -->
+<!-- @include: ../../src/upload.ts -->
 ```

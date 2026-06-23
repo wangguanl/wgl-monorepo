@@ -2,15 +2,26 @@
   "name": "@wgl-m/utils",
   "version": "2.0.0",
   "description": "Common utility functions for Node and Browser",
-  "main": "./dist/main.cjs",
-  "module": "./dist/main.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/main.mjs",
-      "require": "./dist/main.cjs",
-      "default": "./dist/main.mjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
-    "./es/*": "./dist/es/*.mjs"
+    "./es/*": {
+      "import": {
+        "types": "./dist/es/*.d.ts",
+        "default": "./dist/es/*.js"
+      }
+    }
   },
   "files": [
     "dist"
@@ -31,22 +42,16 @@
     "access": "public"
   },
   "scripts": {
-    "build": "node ./scripts/webpack.build.js",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
     "docs": "vitepress dev docs",
     "docs:build": "vitepress build docs"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.8",
-    "@babel/plugin-transform-runtime": "^7.26.8",
-    "@babel/preset-env": "^7.23.6",
-    "@babel/runtime": "^7.26.7",
-    "babel-loader": "^9.2.1",
-    "clean-webpack-plugin": "^4.0.0",
-    "cross-env": "^7.0.3",
+    "@types/node": "^22.0.0",
     "glob": "^10.4.5",
-    "terser-webpack-plugin": "^5.3.11",
-    "vitepress": "1.6.3",
-    "webpack": "^5.97.1",
-    "webpack-merge": "^5.10.0"
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitepress": "1.6.3"
   }
 }

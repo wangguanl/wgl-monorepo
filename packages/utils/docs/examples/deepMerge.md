@@ -64,7 +64,7 @@ Wgl.deepMerge();
 
 ```js  [源码]
 // src/deepMerge.js
-<!-- @include: ../../src/deepMerge.js -->
+<!-- @include: ../../src/deepMerge.ts -->
 ```
 
 ```js  [ESModule]

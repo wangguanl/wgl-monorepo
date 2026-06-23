@@ -47,7 +47,7 @@ Wgl.throttle();
 
 ```js  [源码]
 // src/debounce.js
-<!-- @include: ../../src/debounce.js -->
+<!-- @include: ../../src/debounce.ts -->
 ```
 
 ```js  [ESModule]
