@@ -16,7 +16,7 @@ export default defineConfig(({ command }) => ({
   lang: 'zh-cmn-Hans',
   base: command === 'build' ? '/page__package-plugins/' : '',
   lastUpdated: true,
-  title: '@wgl/plugins',
+  title: '@wgl-m/plugins',
   description: 'Browser-only plugins for web projects',
   themeConfig: {
     siteTitle: '首页',
@@ -51,7 +51,7 @@ export default defineConfig(({ command }) => ({
       },
       {
         text: '更新依赖',
-        link: 'https://npmmirror.com/sync/@wgl/plugins',
+        link: 'https://npmmirror.com/sync/@wgl-m/plugins',
       },
       {
         text: '用例',

@@ -1,5 +1,5 @@
 {
-  "name": "@wgl/utils",
+  "name": "@wgl-m/utils",
   "version": "2.0.0",
   "description": "Common utility functions for Node and Browser",
   "main": "./dist/main.cjs",

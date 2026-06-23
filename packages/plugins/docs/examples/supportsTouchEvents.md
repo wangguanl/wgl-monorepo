@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { supportsTouchEvents } from '@wgl/plugins';
+import { supportsTouchEvents } from '@wgl-m/plugins';
 
 if (supportsTouchEvents()) {
   console.log('touch device');

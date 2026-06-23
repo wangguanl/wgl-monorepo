@@ -1,5 +1,5 @@
 {
-  "name": "@wgl/css",
+  "name": "@wgl-m/css",
   "version": "2.0.0",
   "description": "CSS and SCSS style resources",
   "style": "./dist/reset.css",

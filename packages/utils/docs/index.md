@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "@wgl/utils"
+  name: "@wgl-m/utils"
   text: "Utils"
   tagline: 通用工具函数，适用于 Node 与 Browser
 

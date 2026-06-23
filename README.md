@@ -1,15 +1,15 @@
 # wgl-monorepo
 
-@wgl/* 系列 npm 包的 monorepo 仓库。
+@wgl-m/* 系列 npm 包的 monorepo 仓库。
 
 ## 包列表
 
 | 包名 | 目录 | 运行环境 | 说明 |
 |------|------|----------|------|
-| `@wgl/utils` | `packages/utils` | Node + Browser | 通用工具函数 |
-| `@wgl/plugins` | `packages/plugins` | Browser only | 浏览器业务插件 |
-| `@wgl/node-utils` | `packages/node-utils` | Node only | Node 文件系统工具 |
-| `@wgl/css` | `packages/css` | — | CSS/SCSS 样式资源 |
+| `@wgl-m/utils` | `packages/utils` | Node + Browser | 通用工具函数 |
+| `@wgl-m/plugins` | `packages/plugins` | Browser only | 浏览器业务插件 |
+| `@wgl-m/node-utils` | `packages/node-utils` | Node only | Node 文件系统工具 |
+| `@wgl-m/css` | `packages/css` | — | CSS/SCSS 样式资源 |
 
 ## 快速开始
 
@@ -33,7 +33,7 @@ pnpm version            # 生成 CHANGELOG 并更新版本号
 pnpm release            # 构建并发布到 npm
 ```
 
-发布前请确保 npm 账号拥有 `@wgl` scope 权限，详见 [PUBLISHING.md](./PUBLISHING.md)（逐步操作）与 [MIGRATION.md](./MIGRATION.md)（包名迁移）。
+发布前请确保 npm Organization **`wgl-m`** 已创建且已开启 **2FA**，详见 [PUBLISHING.md](./PUBLISHING.md)。
 
 ## 从旧包迁移
 

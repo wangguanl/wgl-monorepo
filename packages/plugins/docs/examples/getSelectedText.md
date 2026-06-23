@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { getSelectedText } from '@wgl/plugins';
+import { getSelectedText } from '@wgl-m/plugins';
 
 const text = getSelectedText();
 ```

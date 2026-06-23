@@ -1,5 +1,5 @@
 {
-  "name": "@wgl/plugins",
+  "name": "@wgl-m/plugins",
   "version": "1.0.0",
   "description": "Browser-only plugins for web projects",
   "type": "module",

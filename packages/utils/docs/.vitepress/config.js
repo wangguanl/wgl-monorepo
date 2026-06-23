@@ -57,7 +57,7 @@ export default defineConfig(({ command }) => ({
       },
       {
         text: '更新依赖',
-        link: 'https://npmmirror.com/sync/@wgl/utils',
+        link: 'https://npmmirror.com/sync/@wgl-m/utils',
       },
       {
         text: '用例',

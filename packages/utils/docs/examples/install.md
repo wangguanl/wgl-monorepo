@@ -3,19 +3,19 @@
 ::: code-group
 
 ```bash [npm]
-npm install @wgl/utils -S
+npm install @wgl-m/utils -S
 ```
 
 ```bash [cnpm]
-cnpm install @wgl/utils -S
+cnpm install @wgl-m/utils -S
 ```
 
 ```bash [pnpm]
-pnpm add @wgl/utils
+pnpm add @wgl-m/utils
 ```
 
 ```bash [yarn]
-yarn add @wgl/utils
+yarn add @wgl-m/utils
 ```
 
 :::

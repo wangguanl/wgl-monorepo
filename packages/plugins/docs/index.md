@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "@wgl/plugins"
+  name: "@wgl-m/plugins"
   text: "Browser Plugins"
   tagline: 仅适用于 Browser 环境的 Web 业务插件
 

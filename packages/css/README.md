@@ -1,19 +1,19 @@
-# @wgl/css
+# @wgl-m/css
 
 CSS / SCSS 样式资源库。
 
 ## 安装
 
 ```bash
-pnpm add @wgl/css
+pnpm add @wgl-m/css
 ```
 
 ## 使用
 
 ```js
-import '@wgl/css/reset'
+import '@wgl-m/css/reset'
 ```
 
 ```scss
-@use '@wgl/css/mixin' as *;
+@use '@wgl-m/css/mixin' as *;
 ```

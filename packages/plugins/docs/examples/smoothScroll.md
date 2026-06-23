@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { smoothScroll } from '@wgl/plugins';
+import { smoothScroll } from '@wgl-m/plugins';
 
 smoothScroll('#section-2');
 ```

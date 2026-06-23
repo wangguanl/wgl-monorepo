@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { uploadFile, uploadFile2 } from '@wgl/plugins';
+import { uploadFile, uploadFile2 } from '@wgl-m/plugins';
 
 uploadFile(file).then(res => console.log(res));
 

@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { copyToClipboard } from '@wgl/plugins';
+import { copyToClipboard } from '@wgl-m/plugins';
 
 copyToClipboard('hello world').then(() => {
   console.log('copied');

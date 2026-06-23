@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { clickOutside } from '@wgl/plugins';
+import { clickOutside } from '@wgl-m/plugins';
 
 clickOutside(dropdownEl, () => {
   dropdownEl.classList.remove('open');

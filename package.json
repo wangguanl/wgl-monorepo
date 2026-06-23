@@ -4,11 +4,11 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "docs:utils": "pnpm --filter @wgl/utils docs",
-    "docs:utils:build": "pnpm --filter @wgl/utils docs:build",
-    "docs:plugins": "pnpm --filter @wgl/plugins docs",
-    "docs:plugins:build": "pnpm --filter @wgl/plugins docs:build",
-    "docs:css": "pnpm --filter @wgl/css docs",
+    "docs:utils": "pnpm --filter @wgl-m/utils docs",
+    "docs:utils:build": "pnpm --filter @wgl-m/utils docs:build",
+    "docs:plugins": "pnpm --filter @wgl-m/plugins docs",
+    "docs:plugins:build": "pnpm --filter @wgl-m/plugins docs:build",
+    "docs:css": "pnpm --filter @wgl-m/css docs",
     "changeset": "changeset",
     "version": "changeset version",
     "release": "pnpm build && changeset publish"

@@ -2,75 +2,71 @@
 
 按顺序执行，不要跳步。
 
-## 第一步：创建 @wgl Organization（网页操作）
-
-1. 打开：**https://www.npmjs.com/org/create**
-2. **Organization name** 填写：`wgl`
-3. 套餐选择：**Unlimited public packages**（免费公开包）
-4. 点击创建，按提示完成
-
-创建成功后，访问 **https://www.npmjs.com/settings/wgl/members**，确认你的账号是 **Owner**。
-
-> 若 `wgl` 名称已被占用，可改用其他名称（如 `wgl-libs`），但需同步修改各包的 `@wgl/*` 包名。
+当前 monorepo 使用的 npm scope 为 **`@wgl-m/*`**，对应 Organization 名称 **`wgl-m`**。
 
 ---
 
-## 第二步：在终端登录 npm（必做）
+## 第一步：确认 Organization 已创建
 
-**在 npmjs.com 网页登录 ≠ 终端已登录。** 必须在本地终端执行：
+你应已创建 Organization：**wgl-m**
+
+管理地址：**https://www.npmjs.com/settings/wgl-m/members**
+
+确认你的账号（`wgl1119`）是 **Owner**。
+
+> 包名 `@wgl-m/utils` 中的 `wgl-m` 必须与 Organization 名称完全一致。
+
+---
+
+## 第二步：开启双因素认证 2FA（发布必须）
+
+你遇到的 `403 Forbidden - Two-factor authentication ... is required to publish` 即此问题。
+
+npm **发布包** 要求账号开启 2FA：
+
+1. 打开：**https://www.npmjs.com/settings/wgl1119/tfa**
+2. 启用 **Authorization and publishing**（授权和发布）级别的 2FA
+3. 用手机 Authenticator App（Google Authenticator 等）绑定
+
+开启后，**重新登录终端**：
+
+```bash
+npm logout
+npm login
+# 输入用户名、密码、邮箱、以及 Authenticator 的 6 位 OTP
+npm whoami
+# 应输出：wgl1119
+```
+
+---
+
+## 第三步：在终端登录 npm
+
+**网页登录 ≠ 终端已登录。**
 
 ```bash
 npm login
 ```
 
-按提示输入：
-- Username（npm 用户名）
-- Password
-- Email
-- OTP（若开启了两步验证）
-
-验证是否成功：
-
-```bash
-npm whoami
-# 应输出你的 npm 用户名
-```
-
 ---
 
-## 第三步：创建 Changeset（记录本次发布）
-
-在项目根目录：
+## 第四步：创建 Changeset
 
 ```bash
 cd /Applications/My/Public/wgl-monorepo
 pnpm changeset
 ```
 
-交互式选择：
-1. 空格选中要发布的包（首次建议全选：`@wgl/utils`、`@wgl/plugins`、`@wgl/node-utils`、`@wgl/css`）
-2. 回车确认
-3. 每个包选择版本类型（首次发布选 **major** 或保持当前版本选 **patch**）
-4. 输入变更说明，如：`init monorepo release`
+交互式选择要发布的包，输入变更说明。
 
-会在 `.changeset/` 下生成一个 `.md` 文件。
+> 若之前已执行过 `pnpm version` 且没有新的 changeset 文件，需重新 `pnpm changeset` 才能再次发布新版本；或首次发布可直接 `pnpm release`（版本号已在 package.json 中）。
 
 ---
 
-## 第四步：更新版本号
+## 第五步：更新版本号（有 changeset 时）
 
 ```bash
 pnpm version
-```
-
-这会：
-- 更新各包 `package.json` 的 version
-- 生成 `CHANGELOG.md`
-- 删除已消费的 changeset 文件
-
-然后提交并推送：
-
-```bash
 git add -A
 git commit -m "chore: version packages"
 git push
@@ -78,58 +74,53 @@ git push
 
 ---
 
-## 第五步：构建并发布
+## 第六步：构建并发布
 
 ```bash
 pnpm release
 ```
 
-等价于 `pnpm build && changeset publish`，会把包发布到 npm。
-
 ---
 
 ## 常见报错
+
+### `403` — Two-factor authentication ... is required
+
+**原因：** 未开启 2FA，或 `npm login` 时未输入 OTP。
+
+**解决：** 见第二步，开启 2FA 后 `npm logout` → `npm login`。
+
+### `403` — You do not have permission to publish
+
+**原因：** Organization 名称与包 scope 不一致（例如 org 是 `wgl-m` 但包名是 `@wgl/utils`）。
+
+**解决：** 包名必须是 `@wgl-m/*`。
 
 ### `ENEEDAUTH` / `need auth`
 
 终端未登录，执行 `npm login`。
 
-### `402 Payment Required` 或 `scope must be paid`
+### `402 Payment Required`
 
-scoped 包未设为 public。项目根目录已有 `.npmrc`（`access=public`），各包也有 `publishConfig.access: "public"`。若仍报错：
-
-```bash
-npm publish --access public
-```
-
-### `403 Forbidden` — package name too similar
-
-`@wgl/utils` 可能与已有包冲突，或你没有 `@wgl` org 权限。先完成 Organization 创建，并确认你是 Owner。
-
-### `404 Not Found` — PUT @wgl/xxx
-
-Organization `@wgl` 不存在，或你无权向该 scope 发布。回到第一步创建 org。
-
-### `changeset` 没有生成文件
-
-需交互式运行 `pnpm changeset` 并选中至少一个包，不能只做 `pnpm version`（没有 changeset 文件时 version 不会改版本）。
+scoped 包需 public。根目录 `.npmrc` 已配置 `access=public`。
 
 ---
 
 ## 发布后：废弃旧包（可选）
 
 ```bash
-npm deprecate wgl-utils "已迁移至 @wgl/utils，请升级"
-npm deprecate wgl-css "已迁移至 @wgl/css，请升级"
-npm deprecate wgl-node-utils "已迁移至 @wgl/node-utils，请升级"
+npm deprecate wgl-utils "已迁移至 @wgl-m/utils，请升级"
+npm deprecate wgl-css "已迁移至 @wgl-m/css，请升级"
+npm deprecate wgl-node-utils "已迁移至 @wgl-m/node-utils，请升级"
 ```
 
 ---
 
 ## 快速检查清单
 
-- [ ] https://www.npmjs.com/org/create 已创建 `wgl` org
-- [ ] `npm whoami` 有输出
-- [ ] `pnpm changeset` 已生成 `.changeset/*.md`
-- [ ] `pnpm version` 已更新版本并 commit
+- [ ] Organization `wgl-m` 已创建，你是 Owner
+- [ ] 已开启 2FA（Authorization and publishing）
+- [ ] `npm logout` → `npm login` 并输入 OTP
+- [ ] `npm whoami` 输出 `wgl1119`
+- [ ] 包名为 `@wgl-m/*`（不是 `@wgl/*`）
 - [ ] `pnpm release` 成功

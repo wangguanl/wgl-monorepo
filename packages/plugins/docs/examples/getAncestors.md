@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { getAncestors } from '@wgl/plugins';
+import { getAncestors } from '@wgl-m/plugins';
 
 const ancestors = getAncestors(document.querySelector('.item'));
 ```

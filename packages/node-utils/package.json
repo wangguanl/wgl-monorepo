@@ -1,5 +1,5 @@
 {
-  "name": "@wgl/node-utils",
+  "name": "@wgl-m/node-utils",
   "version": "2.0.0",
   "description": "Node-only utility functions",
   "main": "./index.js",
@@ -27,8 +27,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "echo \"@wgl/node-utils: no build step\"",
-    "build:turbo": "echo \"@wgl/node-utils: no build step\""
+    "build": "echo \"@wgl-m/node-utils: no build step\"",
+    "build:turbo": "echo \"@wgl-m/node-utils: no build step\""
   },
   "turbo": {
     "build": {

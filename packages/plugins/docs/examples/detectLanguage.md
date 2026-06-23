@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { detectLanguage } from '@wgl/plugins';
+import { detectLanguage } from '@wgl-m/plugins';
 
 const lang = detectLanguage('zh-CN');
 console.log(lang);

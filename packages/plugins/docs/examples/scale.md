@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { scale } from '@wgl/plugins';
+import { scale } from '@wgl-m/plugins';
 
 scale(750); // 设计稿宽度 750
 ```

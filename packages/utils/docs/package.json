@@ -1,5 +1,5 @@
 {
-  "name": "@wgl/utils-docs",
+  "name": "@wgl-m/utils-docs",
   "private": true,
   "scripts": {
     "dev": "vitepress dev",

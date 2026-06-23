@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { prefersDarkColorScheme } from '@wgl/plugins';
+import { prefersDarkColorScheme } from '@wgl-m/plugins';
 
 if (prefersDarkColorScheme()) {
   document.body.classList.add('dark');

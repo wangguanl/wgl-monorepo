@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { toggleFullscreen } from '@wgl/plugins';
+import { toggleFullscreen } from '@wgl-m/plugins';
 
 toggleFullscreen(true, '#app');  // 进入全屏
 toggleFullscreen(false);         // 退出全屏

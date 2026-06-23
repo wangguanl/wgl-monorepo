@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { elementContains } from '@wgl/plugins';
+import { elementContains } from '@wgl-m/plugins';
 
 elementContains(parentEl, childEl); // true | false
 ```

@@ -1,6 +1,6 @@
 set -e
 
-pnpm --filter @wgl/plugins docs:build
+pnpm --filter @wgl-m/plugins docs:build
 
 cd .vitepress/dist
 

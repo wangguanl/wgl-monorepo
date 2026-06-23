@@ -5,7 +5,7 @@
 ## Example
 
 ```js
-import { checkCapsLock } from '@wgl/plugins';
+import { checkCapsLock } from '@wgl-m/plugins';
 
 checkCapsLock(inputEl, isOn => {
   console.log('CapsLock:', isOn);
