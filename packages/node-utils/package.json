@@ -1,0 +1,41 @@
+{
+  "name": "@wgl/node-utils",
+  "version": "2.0.0",
+  "description": "Node-only utility functions",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "author": {
+    "name": "Mr.Wang",
+    "email": "17600980516@163.com",
+    "url": "https://github.com/wangguanl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangguanl/wgl-monorepo",
+    "directory": "packages/node-utils"
+  },
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo \"@wgl/node-utils: no build step\"",
+    "build:turbo": "echo \"@wgl/node-utils: no build step\""
+  },
+  "turbo": {
+    "build": {
+      "outputs": []
+    }
+  },
+  "dependencies": {
+    "await-to-js": "^3.0.0"
+  }
+}

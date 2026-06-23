@@ -1,0 +1,16 @@
+{
+  "name": "@wgl/utils-docs",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev",
+    "preview": "vitepress preview"
+  },
+  "type": "module",
+  "devDependencies": {
+    "fast-glob": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "ISC"
+}

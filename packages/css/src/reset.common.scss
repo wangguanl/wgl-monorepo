@@ -1,0 +1,136 @@
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+input,
+button,
+textarea,
+iframe,
+p,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+}
+body {
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC,
+    Hiragino Sans GB, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  color: #333;
+  position: relative;
+  /*字体抗锯齿渲染*/
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  /* 文字渲染 */
+  text-rendering: optimizeLegibility;
+  /* text-rendering: geometricPrecision; */
+  overflow: hidden auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 12px;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  border: none;
+  vertical-align: middle;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+i {
+  font-style: normal;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  line-height: normal;
+}
+
+textarea {
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
+  resize: none !important;
+  outline: none;
+  vertical-align: top;
+}
+
+iframe {
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+pre {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+input[type='number'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+// 修改浏览器自动填充密码默认样式
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset !important;
+}

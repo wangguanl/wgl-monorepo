@@ -1,0 +1,21 @@
+{
+  "name": "wgl-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "docs:utils": "pnpm --filter @wgl/utils docs",
+    "docs:utils:build": "pnpm --filter @wgl/utils docs:build",
+    "docs:plugins": "pnpm --filter @wgl/plugins docs",
+    "docs:plugins:build": "pnpm --filter @wgl/plugins docs:build",
+    "docs:css": "pnpm --filter @wgl/css docs",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.10",
+    "turbo": "^2.3.3"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

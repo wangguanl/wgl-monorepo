@@ -1,0 +1,105 @@
+{
+  "name": "@wgl/plugins",
+  "version": "1.0.0",
+  "description": "Browser-only plugins for web projects",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./checkCapsLock": {
+      "import": "./dist/checkCapsLock.js",
+      "require": "./dist/checkCapsLock.cjs"
+    },
+    "./clickOutside": {
+      "import": "./dist/clickOutside.js",
+      "require": "./dist/clickOutside.cjs"
+    },
+    "./copyToClipboard": {
+      "import": "./dist/copyToClipboard.js",
+      "require": "./dist/copyToClipboard.cjs"
+    },
+    "./detectLanguage": {
+      "import": "./dist/detectLanguage.js",
+      "require": "./dist/detectLanguage.cjs"
+    },
+    "./elementContains": {
+      "import": "./dist/elementContains.js",
+      "require": "./dist/elementContains.cjs"
+    },
+    "./getAncestors": {
+      "import": "./dist/getAncestors.js",
+      "require": "./dist/getAncestors.cjs"
+    },
+    "./getSelectedText": {
+      "import": "./dist/getSelectedText.js",
+      "require": "./dist/getSelectedText.cjs"
+    },
+    "./prefersDarkColorScheme": {
+      "import": "./dist/prefersDarkColorScheme.js",
+      "require": "./dist/prefersDarkColorScheme.cjs"
+    },
+    "./scale": {
+      "import": "./dist/scale.js",
+      "require": "./dist/scale.cjs"
+    },
+    "./smoothScroll": {
+      "import": "./dist/smoothScroll.js",
+      "require": "./dist/smoothScroll.cjs"
+    },
+    "./supportsTouchEvents": {
+      "import": "./dist/supportsTouchEvents.js",
+      "require": "./dist/supportsTouchEvents.cjs"
+    },
+    "./toggleFullscreen": {
+      "import": "./dist/toggleFullscreen.js",
+      "require": "./dist/toggleFullscreen.cjs"
+    },
+    "./upload": {
+      "import": "./dist/upload.js",
+      "require": "./dist/upload.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://wangguanl.github.io/page__package-plugins/",
+  "author": {
+    "name": "Mr.Wang",
+    "email": "17600980516@163.com",
+    "url": "https://github.com/wangguanl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangguanl/wgl-monorepo",
+    "directory": "packages/plugins"
+  },
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "docs": "vitepress dev docs",
+    "docs:build": "vitepress build docs"
+  },
+  "peerDependencies": {
+    "axios": ">=0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "axios": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "glob": "^10.4.5",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitepress": "1.6.3"
+  }
+}

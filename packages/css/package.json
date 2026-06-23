@@ -1,0 +1,43 @@
+{
+  "name": "@wgl/css",
+  "version": "2.0.0",
+  "description": "CSS and SCSS style resources",
+  "style": "./dist/reset.css",
+  "exports": {
+    ".": "./dist/reset.css",
+    "./reset": "./dist/reset.css",
+    "./mixin": "./dist/mixin.scss",
+    "./bem": "./dist/BEM.scss"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://wangguanl.github.io/page__package-css/",
+  "author": {
+    "name": "Mr.Wang",
+    "email": "17600980516@163.com",
+    "url": "https://github.com/wangguanl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangguanl/wgl-monorepo",
+    "directory": "packages/css"
+  },
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-dart-sass": "^1.1.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "postcss": "^8.4.32"
+  }
+}

@@ -1,0 +1,45 @@
+@use './reset.common.scss';
+
+html * {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  // IOS滑动卡顿
+  -webkit-overflow-scrolling: touch;
+
+  // IOS浏览器内禁止文字缩放
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100%;
+}
+
+// 去除iPhone中默认的input样式
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  resize: none;
+}
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'],
+label {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+// H5兼容键盘收起编辑框失焦
+input.fixAKeyboard:focus,
+textarea.fixAndroidKeyboard:focus {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-modify: read-write-plaintext-only;
+}
