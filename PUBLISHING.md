@@ -124,3 +124,38 @@ npm deprecate wgl-node-utils "已迁移至 @wgl-m/node-utils，请升级"
 - [ ] `npm whoami` 输出 `wgl1119`
 - [ ] 包名为 `@wgl-m/*`（不是 `@wgl/*`）
 - [ ] `pnpm release` 成功
+
+---
+
+## GitHub Actions 自动发布（已配置）
+
+Secret `NPM_TOKEN` 配置完成后，还需将 workflow 推送到 GitHub：
+
+```bash
+git add .github/workflows/release.yml
+git commit -m "ci: add release workflow"
+git push
+```
+
+### 日常发版流程
+
+```
+1. 改代码
+2. pnpm changeset        # 本地创建 changeset 文件
+3. git add -A && git commit && git push
+4. GitHub Actions 自动创建 PR「chore: version packages」
+5. 合并该 PR
+6. GitHub Actions 自动 build + 发布到 npm（无需本机 OTP）
+```
+
+### 查看运行状态
+
+GitHub 仓库 → **Actions** → **Release**
+
+### NPM_TOKEN 权限要求
+
+Granular Access Token 需满足：
+
+- **Packages**: Read and write
+- **Organizations**: 包含 `wgl-m`
+- 若可选：**Bypass 2FA for automation**（CI 发布必须）
