@@ -33,7 +33,7 @@ pnpm version            # 生成 CHANGELOG 并更新版本号
 pnpm release            # 构建并发布到 npm
 ```
 
-发布前请确保 npm 账号拥有 `@wgl` scope 权限，详见 [MIGRATION.md](./MIGRATION.md)。
+发布前请确保 npm 账号拥有 `@wgl` scope 权限，详见 [PUBLISHING.md](./PUBLISHING.md)（逐步操作）与 [MIGRATION.md](./MIGRATION.md)（包名迁移）。
 
 ## 从旧包迁移
 
