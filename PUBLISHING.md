@@ -125,6 +125,8 @@ npm deprecate wgl-node-utils "已迁移至 @wgl-m/node-utils，请升级"
 - [ ] 包名为 `@wgl-m/*`（不是 `@wgl/*`）
 - [ ] `pnpm release` 成功
 
+> **日常发版速查**见 [RELEASE.md](./RELEASE.md)
+
 ---
 
 ## GitHub Actions 自动发布（已配置）

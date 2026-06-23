@@ -25,15 +25,14 @@ pnpm docs:utils
 pnpm docs:plugins
 ```
 
-## 发布
+## 发版
+
+**完整步骤见 [RELEASE.md](./RELEASE.md)**（建议收藏，忘了就看这个）。
 
 ```bash
-pnpm changeset          # 选择变更的包与版本
-pnpm version            # 生成 CHANGELOG 并更新版本号
-pnpm release            # 构建并发布到 npm
+pnpm changeset    # ① 选包、写说明
+git push          # ② 推送后去 GitHub 合并 Version PR → 自动发布
 ```
-
-发布前请确保 npm Organization **`wgl-m`** 已创建且已开启 **2FA**，详见 [PUBLISHING.md](./PUBLISHING.md)。
 
 ## 从旧包迁移
 
