@@ -152,7 +152,7 @@
   "files": [
     "dist"
   ],
-  "homepage": "https://wangguanl.github.io/page__package-plugins/",
+  "homepage": "https://wangguanl.github.io/wgl-monorepo/packages/plugins/",
   "author": {
     "name": "Mr.Wang",
     "email": "17600980516@163.com",
@@ -170,9 +170,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit",
-    "docs": "vitepress dev docs",
-    "docs:build": "vitepress build docs"
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "axios": ">=0.21.0"
@@ -185,7 +183,6 @@
   "devDependencies": {
     "glob": "^10.4.5",
     "tsup": "^8.3.5",
-    "typescript": "^5.7.2",
-    "vitepress": "1.6.3"
+    "typescript": "^5.7.2"
   }
 }

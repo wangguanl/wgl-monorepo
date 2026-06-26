@@ -5,19 +5,19 @@
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "dev": "turbo run dev",
-    "docs:utils": "pnpm --filter @wgl-m/utils docs",
-    "docs:utils:build": "pnpm --filter @wgl-m/utils docs:build",
-    "docs:plugins": "pnpm --filter @wgl-m/plugins docs",
-    "docs:plugins:build": "pnpm --filter @wgl-m/plugins docs:build",
-    "docs:css": "pnpm --filter @wgl-m/css docs",
+    "docs": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
     "changeset": "changeset",
     "version": "changeset version",
     "release": "pnpm build && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.10",
+    "fast-glob": "^3.3.3",
     "turbo": "^2.3.3",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vitepress": "1.6.3"
   },
   "packageManager": "pnpm@9.15.0"
 }

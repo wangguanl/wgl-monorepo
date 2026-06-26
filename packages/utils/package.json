@@ -26,7 +26,7 @@
   "files": [
     "dist"
   ],
-  "homepage": "https://wangguanl.github.io/page__package-utils/",
+  "homepage": "https://wangguanl.github.io/wgl-monorepo/packages/utils/",
   "author": {
     "name": "Mr.Wang",
     "email": "17600980516@163.com",
@@ -43,15 +43,12 @@
   },
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc --noEmit",
-    "docs": "vitepress dev docs",
-    "docs:build": "vitepress build docs"
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "glob": "^10.4.5",
     "tsup": "^8.3.5",
-    "typescript": "^5.7.2",
-    "vitepress": "1.6.3"
+    "typescript": "^5.7.2"
   }
 }

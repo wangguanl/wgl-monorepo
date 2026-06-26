@@ -21,8 +21,7 @@ pnpm install
 pnpm build
 
 # 启动文档
-pnpm docs:utils
-pnpm docs:plugins
+pnpm docs
 ```
 
 ## 发版
@@ -34,9 +33,13 @@ pnpm changeset    # ① 选包、写说明
 git push          # ② 推送后去 GitHub 合并 Version PR → 自动发布
 ```
 
-## TypeScript 迁移（规划中）
+## 文档与方案
 
-方案文档：[docs/typescript-migration/](./docs/typescript-migration/README.md)（待确认后执行）
+| 主题 | 文档 | 状态 |
+|------|------|------|
+| 文档索引 | [docs/](./docs/README.md) | — |
+| TypeScript 迁移 | [docs/typescript-migration/](./docs/typescript-migration/README.md) | 已完成 |
+| 统一文档站点 | [docs/documentation-site/](./docs/documentation-site/README.md) | 待确认 |
 
 ## 从旧包迁移
 

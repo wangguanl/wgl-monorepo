@@ -1,0 +1,18 @@
+# detectLanguage
+
+获取用户首选语言。
+
+## Example
+
+```js
+import { detectLanguage } from '@wgl-m/plugins';
+
+const lang = detectLanguage('zh-CN');
+console.log(lang);
+```
+
+## Code
+
+```js
+<!-- @include: ../../../packages/plugins/src/detectLanguage.ts -->
+```
