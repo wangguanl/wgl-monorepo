@@ -15,3 +15,9 @@ pnpm docs:build  # 构建
 |------|------|------|
 | [TypeScript 迁移](./typescript-migration/README.md) | 已完成 | 源码 TS 化、tsup 统一打包 |
 | [统一文档站点](./documentation-site/README.md) | 已完成 | 合并分散的 VitePress 站点 |
+
+## 使用指南
+
+| 文档 | 说明 |
+|------|------|
+| [本地引用指南](./local-usage.md) | 未发版时跨仓库消费组件包（workspace:* 协议、踩坑记录） |

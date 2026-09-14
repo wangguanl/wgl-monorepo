@@ -18,6 +18,9 @@ hero:
     - theme: alt
       text: CSS
       link: /packages/css/
+    - theme: alt
+      text: Components
+      link: /packages/components/
 
 features:
   - title: 统一文档

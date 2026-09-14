@@ -1,0 +1,45 @@
+{
+  "name": "@wgl-m/folder-tree",
+  "version": "1.0.0",
+  "description": "Framework-agnostic folder tree core: flatten paths to tree + file icon name contract",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "Mr.Wang",
+    "email": "17600980516@163.com",
+    "url": "https://github.com/wangguanl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangguanl/wgl-monorepo",
+    "directory": "packages/components/folder-tree"
+  },
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}

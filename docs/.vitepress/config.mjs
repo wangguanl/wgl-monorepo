@@ -23,12 +23,27 @@ const pluginsExamples = fg
     };
   });
 
+/** 通用：生成某组件包 examples 的 glob 侧边栏项 */
+function componentExamples(pkg) {
+  const dir = `./docs/packages/components/${pkg}/examples`;
+  return fg
+    .sync([`${dir}/*.md`])
+    .filter(url => url !== `${dir}/install.md`)
+    .map(url => {
+      const text = url.replace(`${dir}/`, '').split('.')[0];
+      return {
+        text,
+        link: `/packages/components/${pkg}/examples/` + text,
+      };
+    });
+}
+
 export default defineConfig(({ command }) => ({
   lang: 'zh-cmn-Hans',
   base: command === 'build' ? '/wgl-monorepo/' : '',
   lastUpdated: true,
   title: '@wgl-m/*',
-  description: 'WGL Monorepo — Utils, Plugins, Node Utils, CSS',
+  description: 'WGL Monorepo — Utils · Plugins · Node Utils · CSS · Components',
   srcExclude: ['typescript-migration/**', 'documentation-site/**', 'README.md'],
   themeConfig: {
     siteTitle: '@wgl-m/*',
@@ -51,6 +66,7 @@ export default defineConfig(({ command }) => ({
       { text: 'Plugins', link: '/packages/plugins/' },
       { text: 'Node Utils', link: '/packages/node-utils/' },
       { text: 'CSS', link: '/packages/css/' },
+      { text: 'Components', link: '/packages/components/' },
     ],
 
     sidebar: {
@@ -102,6 +118,41 @@ export default defineConfig(({ command }) => ({
           link: '/packages/css/',
         },
       ],
+      '/packages/components/': [
+        {
+          text: '组件总览',
+          link: '/packages/components/',
+        },
+        {
+          text: 'FolderTree 核心',
+          collapsed: false,
+          items: [
+            { text: '安装', link: '/packages/components/folder-tree/examples/install' },
+            { text: '用例', items: componentExamples('folder-tree') },
+          ],
+        },
+        {
+          text: 'FolderTree Vue',
+          collapsed: false,
+          items: [
+            { text: '安装', link: '/packages/components/folder-tree-vue/examples/install' },
+            { text: '用例', items: componentExamples('folder-tree-vue') },
+          ],
+        },
+        {
+          text: 'FolderTree React',
+          collapsed: false,
+          items: [
+            { text: '安装', link: '/packages/components/folder-tree-react/examples/install' },
+            { text: '用例', items: componentExamples('folder-tree-react') },
+          ],
+        },
+        {
+          text: '开发指南',
+          items: [{ text: '本地引用指南', link: '/local-usage' }],
+        },
+      ],
     },
+    '/local-usage': [{ text: '本地引用指南', link: '/local-usage' }],
   },
 }));

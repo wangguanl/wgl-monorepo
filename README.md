@@ -10,6 +10,9 @@
 | `@wgl-m/plugins` | `packages/plugins` | Browser only | 浏览器业务插件 |
 | `@wgl-m/node-utils` | `packages/node-utils` | Node only | Node 文件系统工具 |
 | `@wgl-m/css` | `packages/css` | — | CSS/SCSS 样式资源 |
+| `@wgl-m/folder-tree` | `packages/components/folder-tree` | 通用 | 文件夹树框架无关核心（路径转树 + 图标契约） |
+| `@wgl-m/folder-tree-vue` | `packages/components/folder-tree-vue` | Vue 3 | 文件夹树 Vue 组件（依赖核心包） |
+| `@wgl-m/folder-tree-react` | `packages/components/folder-tree-react` | React 17+ | 文件夹树 React 组件（依赖核心包） |
 
 ## 快速开始
 
@@ -40,6 +43,7 @@ git push          # ② 推送后去 GitHub 合并 Version PR → 自动发布
 | 文档索引 | [docs/](./docs/README.md) | — |
 | TypeScript 迁移 | [docs/typescript-migration/](./docs/typescript-migration/README.md) | 已完成 |
 | 统一文档站点 | [docs/documentation-site/](./docs/documentation-site/README.md) | 待确认 |
+| 组件本地引用 | [docs/local-usage.md](./docs/local-usage.md) | 当前方案 |
 
 ## 从旧包迁移
 
