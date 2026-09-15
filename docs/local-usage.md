@@ -50,6 +50,8 @@ packages:
 |--------|------|---------|
 | lego（Vue） | `@wgl-m/folder-tree-vue: workspace:*` 一条 | Vue 壳组件 + `#icon` 插槽接 TagIcon |
 | work shop（React） | `@wgl-m/folder-tree: workspace:*` 一条 | 仅 core 逻辑，UI 用自己的 antd Tree |
+| compress-img（CLI 工具，npm→pnpm 迁移） | `@wgl-m/down-img: workspace:*` 一条 | 图片下载 API（URL 输入 → 下载 → sharp 压缩） |
+| down-img（专职下载工具 · 壳工程） | `@wgl-m/down-img: workspace:*` 一条 | CLI 入口（bin 调包的 `./cli` run，仓库只留清单与入口） |
 | monorepo 内部 | 同上 | workspace 内天然支持 |
 
 ## 注意事项（踩过的坑）

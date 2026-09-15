@@ -9,6 +9,7 @@
 | `@wgl-m/utils` | `packages/utils` | Node + Browser | 通用工具函数 |
 | `@wgl-m/plugins` | `packages/plugins` | Browser only | 浏览器业务插件 |
 | `@wgl-m/node-utils` | `packages/node-utils` | Node only | Node 文件系统工具 |
+| `@wgl-m/down-img` | `packages/down-img` | Node only | 网络图片批量下载（零依赖，API + CLI） |
 | `@wgl-m/css` | `packages/css` | — | CSS/SCSS 样式资源 |
 | `@wgl-m/folder-tree` | `packages/components/folder-tree` | 通用 | 文件夹树框架无关核心（路径转树 + 图标契约） |
 | `@wgl-m/folder-tree-vue` | `packages/components/folder-tree-vue` | Vue 3 | 文件夹树 Vue 组件（依赖核心包） |

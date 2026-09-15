@@ -10,6 +10,7 @@
 | `wgl-node-utils` | `@wgl-m/node-utils` | Node only |
 | `wgl-css` | `@wgl-m/css` | 样式资源 |
 | （无独立 npm 包） | `@wgl-m/plugins` | Browser only |
+| （本地工具 `tool__down-img`） | `@wgl-m/down-img` | Node only |
 
 ## 安装命令
 

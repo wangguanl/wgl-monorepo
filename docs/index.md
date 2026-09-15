@@ -3,7 +3,7 @@ layout: home
 hero:
   name: "@wgl-m/*"
   text: "WGL Monorepo"
-  tagline: Utils · Plugins · Node Utils · CSS
+  tagline: Utils · Plugins · Node Utils · Down Img · CSS
 
   actions:
     - theme: brand
@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: Node Utils
       link: /packages/node-utils/
+    - theme: alt
+      text: Down Img
+      link: /packages/down-img/
     - theme: alt
       text: CSS
       link: /packages/css/

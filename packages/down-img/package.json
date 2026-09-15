@@ -1,0 +1,64 @@
+{
+  "name": "@wgl-m/down-img",
+  "version": "1.0.0",
+  "description": "网络图片批量下载工具包：Node 原生 fetch、零依赖，单张/批量并发、幂等跳过、content-type 扩展名识别、超时重试（由本地工具 tool__down-img 迁移而来）",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "down-img": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./cli": {
+      "import": {
+        "types": "./dist/cli.d.ts",
+        "default": "./dist/cli.js"
+      },
+      "require": {
+        "types": "./dist/cli.d.cts",
+        "default": "./dist/cli.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "author": {
+    "name": "Mr.Wang",
+    "email": "17600980516@163.com",
+    "url": "https://github.com/wangguanl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangguanl/wgl-monorepo",
+    "directory": "packages/down-img"
+  },
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "tsup && node --test --test-force-exit test/*.test.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}

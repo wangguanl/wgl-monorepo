@@ -65,6 +65,7 @@ export default defineConfig(({ command }) => ({
       { text: 'Utils', link: '/packages/utils/' },
       { text: 'Plugins', link: '/packages/plugins/' },
       { text: 'Node Utils', link: '/packages/node-utils/' },
+      { text: 'Down Img', link: '/packages/down-img/' },
       { text: 'CSS', link: '/packages/css/' },
       { text: 'Components', link: '/packages/components/' },
     ],
@@ -106,6 +107,18 @@ export default defineConfig(({ command }) => ({
         {
           text: 'API',
           link: '/packages/node-utils/',
+        },
+      ],
+      '/packages/down-img/': [
+        {
+          text: '安装',
+          link: '/packages/down-img/install',
+        },
+        {
+          text: '用例',
+          items: [
+            { text: 'download', link: '/packages/down-img/examples/download' },
+          ],
         },
       ],
       '/packages/css/': [
