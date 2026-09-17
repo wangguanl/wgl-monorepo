@@ -1,0 +1,72 @@
+{
+  "name": "@wgl-m/html2md",
+  "version": "0.1.0",
+  "description": "HTML 页面转 Markdown：抓取网页 / 本地 html，按 selector 捕获，图片本地化（@wgl-m/down-img），turndown 转 Markdown（由 tool__html2md 迁移而来）",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "html2md": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./cli": {
+      "import": {
+        "types": "./dist/cli.d.ts",
+        "default": "./dist/cli.js"
+      },
+      "require": {
+        "types": "./dist/cli.d.cts",
+        "default": "./dist/cli.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "author": {
+    "name": "Mr.Wang",
+    "email": "17600980516@163.com",
+    "url": "https://github.com/wangguanl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangguanl/wgl-monorepo",
+    "directory": "packages/html2md"
+  },
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@wgl-m/down-img": "workspace:*",
+    "@wgl-m/node-utils": "workspace:*",
+    "cheerio": "^1.2.0",
+    "superagent": "^10.3.0",
+    "turndown": "^7.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/superagent": "^8.1.0",
+    "@types/turndown": "^5.0.5",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}

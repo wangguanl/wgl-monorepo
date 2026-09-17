@@ -65,7 +65,7 @@ export default defineConfig(({ command }) => ({
       { text: 'Utils', link: '/packages/utils/' },
       { text: 'Plugins', link: '/packages/plugins/' },
       { text: 'Node Utils', link: '/packages/node-utils/' },
-      { text: 'Down Img', link: '/packages/down-img/' },
+      { text: 'Tools', link: '/packages/tools/' },
       { text: 'CSS', link: '/packages/css/' },
       { text: 'Components', link: '/packages/components/' },
     ],
@@ -109,15 +109,60 @@ export default defineConfig(({ command }) => ({
           link: '/packages/node-utils/',
         },
       ],
-      '/packages/down-img/': [
+      '/packages/tools/': [
         {
-          text: '安装',
-          link: '/packages/down-img/install',
-        },
-        {
-          text: '用例',
+          text: '工具箱',
+          link: '/packages/tools/',
+          collapsed: false,
           items: [
-            { text: 'download', link: '/packages/down-img/examples/download' },
+            {
+              text: '图片批量下载',
+              collapsed: false,
+              items: [
+                { text: '安装', link: '/packages/tools/down-img/install' },
+                { text: '用例', link: '/packages/tools/down-img/examples/download' },
+              ],
+            },
+            {
+              text: 'HTML → Markdown',
+              collapsed: false,
+              items: [
+                { text: '安装', link: '/packages/tools/html2md/install' },
+                { text: '用例', link: '/packages/tools/html2md/examples/htmlemd' },
+              ],
+            },
+            {
+              text: '图片压缩',
+              collapsed: false,
+              items: [
+                { text: '安装', link: '/packages/tools/compress/install' },
+                { text: '用例', link: '/packages/tools/compress/examples/compress' },
+              ],
+            },
+            {
+              text: 'M3U8 下载',
+              collapsed: false,
+              items: [
+                { text: '安装', link: '/packages/tools/down-m3u8/install' },
+                { text: '用例', link: '/packages/tools/down-m3u8/examples/download' },
+              ],
+            },
+            {
+              text: 'B 站转译',
+              collapsed: false,
+              items: [
+                { text: '安装', link: '/packages/tools/trans-bilibili/install' },
+                { text: '用例', link: '/packages/tools/trans-bilibili/examples/convert' },
+              ],
+            },
+            {
+              text: '仓库脚手架',
+              collapsed: false,
+              items: [
+                { text: '安装', link: '/packages/tools/down-repository/install' },
+                { text: '用例', link: '/packages/tools/down-repository/examples/scaffold' },
+              ],
+            },
           ],
         },
       ],

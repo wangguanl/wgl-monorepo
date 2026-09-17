@@ -8,10 +8,10 @@ hero:
   actions:
     - theme: brand
       text: 安装
-      link: /packages/down-img/install
+      link: /packages/tools/down-img/install
     - theme: alt
       text: 用例
-      link: /packages/down-img/examples/download
+      link: /packages/tools/down-img/examples/download
 ---
 
 features:

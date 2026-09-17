@@ -70,5 +70,5 @@ compress-img https://example.com/photo.jpg -q 80
 ## 源码
 
 ```ts
-<!-- @include: ../../../packages/down-img/src/download.ts -->
+<!-- @include: ../../../../packages/down-img/src/download.ts -->
 ```
