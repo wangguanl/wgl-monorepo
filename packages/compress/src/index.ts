@@ -1,2 +1,2 @@
 export { IMAGE_EXTS, fmtKB, savedPct, parseSize, parseCrop, pool } from './util.ts';
-export { compressImage, type CompressOptions } from './compress.ts';
+export { compressImage, watermarkFile, thumbnailFile, type CompressOptions, type WatermarkOptions, type ThumbnailOptions } from './compress.ts';

@@ -44,6 +44,16 @@ export interface CompressOptions {
   overwrite?: boolean;
 }
 
+export interface ThumbnailOptions {
+  width: number;
+  height: number;
+  format?: string;
+  quality?: number;
+  effort?: number;
+  lossless?: boolean;
+  overwrite?: boolean;
+}
+
 export interface CompressResult {
   data: Buffer | null;
   info: { width?: number; height?: number; format?: string; size?: number };
@@ -179,15 +189,57 @@ async function applyWatermark(pipe: SharpInstance, watermark: WatermarkOptions, 
 </svg>`;
     wmInput = { input: Buffer.from(svg), gravity: gravity as Gravity, blend: 'over' };
   } else {
-    const { data, info } = await sharp(path!)
-      .ensureAlpha()
-      .toColourspace('srgb')
-      .raw()
-      .toBuffer({ resolveWithObject: true });
+    let wmSharp = sharp(path!).ensureAlpha().toColourspace('srgb');
+    const wmMeta = await wmSharp.metadata();
+    // 叠加层不能超过底图（sharp 限制）：超尺寸时等比缩小到适配
+    const baseW = meta.width || 1200;
+    const baseH = meta.height || 1200;
+    const scale = Math.min(1, baseW / (wmMeta.width || 1), baseH / (wmMeta.height || 1));
+    if (scale < 1) {
+      const w = Math.max(1, Math.round((wmMeta.width || 1) * scale));
+      const h = Math.max(1, Math.round((wmMeta.height || 1) * scale));
+      wmSharp = wmSharp.resize(w, h, { fit: 'inside' });
+    }
+    const { data, info } = await wmSharp.raw().toBuffer({ resolveWithObject: true });
     for (let i = 3; i < data.length; i += 4) data[i] = Math.round(data[i] * opacity);
     wmInput = { input: Buffer.from(data), raw: { width: info.width, height: info.height, channels: 4 }, gravity: gravity as Gravity, blend: 'over' };
   }
   return pipe.composite([wmInput]);
+}
+
+/** 对单张图片叠加水印（文字或图片）并写入新文件，不改尺寸/格式，仅做合成。供工作流等独立水印节点复用。 */
+export async function watermarkFile(
+  input: string,
+  output: string,
+  opts: WatermarkOptions & { overwrite?: boolean }
+): Promise<void> {
+  if (!opts.text && !opts.path) throw new Error('水印需要 text 或 path');
+  if (!opts.overwrite && exists(output)) throw new Error(`输出已存在（--overwrite 可覆盖）：${output}`);
+  const meta = await sharp(input, { failOn: 'none' }).metadata();
+  const pipe = await applyWatermark(sharp(input, { failOn: 'none' }).rotate(), opts, meta);
+  await pipe.toFile(output);
+}
+
+/** 固定尺寸封面缩略图：居中覆盖裁剪到指定 w×h（参考 TinyPNG method:'thumb'），源图比目标小时不放大。
+ * 仅做尺寸动作，不压缩比例/不换格式语义；供压缩完整版与工作流 img-thumbnail 节点复用。 */
+export async function thumbnailFile(
+  input: string,
+  output: string,
+  opts: ThumbnailOptions
+): Promise<{ width?: number; height?: number; format?: string; size?: number }> {
+  const { width, height, format, quality = 75, effort, lossless = false, overwrite = false } = opts;
+  if (!Number.isFinite(width) || width <= 0 || !Number.isFinite(height) || height <= 0) {
+    throw new Error('缩略图宽高必须为正整数');
+  }
+  if (!overwrite && exists(output)) throw new Error(`输出已存在（--overwrite 可覆盖）：${output}`);
+  const meta = await sharp(input, { failOn: 'none' }).metadata();
+  const outFormat = normalizeFormat(format || meta.format);
+  const pipe = sharp(input, { failOn: 'none' })
+    .rotate()
+    .resize(width, height, { fit: 'cover', position: 'centre', withoutEnlargement: true })
+    [outFormat](buildEncoderOpts(outFormat, { quality, effort, lossless, progressive: false, stripMeta: true }));
+  const info = await pipe.toFile(output);
+  return { ...info, format: outFormat };
 }
 
 function escapeXml(s: string): string {
